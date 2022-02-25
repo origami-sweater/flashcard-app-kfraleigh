@@ -10,10 +10,10 @@ function FormatDeck({ id, name, description, cards }) {
             <div key={id} class="card mb-3">
                 <div class="card-body">
                     <h5>{name}</h5>
-                    <span>{cards.length}{id}</span>
+                    <p class="text-end">{cards.length}{id}</p>
                     <p class="card-text">{description}</p>
-                    <Link to={`/decks/${id}`} class="btn btn-secondary">View</Link>
-                    <Link to={`/decks/${id}/study`} class="btn btn-primary">Study</Link>
+                    <Link to={`/decks/${id}`} class="btn btn-secondary mr-2">View</Link>
+                    <Link to={`/decks/${id}/study`} class="btn btn-primary mr-2">Study</Link>
                     <DeleteDeckButton deckId={id}/>
                 </div>
             </div>

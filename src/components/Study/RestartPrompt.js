@@ -1,3 +1,19 @@
-/*When all cards are finished, a message is shown and the user is offered the opportunity to restart the deck. If the user does not restart the deck, they return to the home screen.
+import React from "react";
+import { useHistory } from "react-router-dom";
 
-You can use window.confirm() to create the modal dialog shown in the screenshot below.*/
+function RestartPrompt({ apiCards, cardId, setCardId }) {
+    const history = useHistory();
+    
+    if (apiCards.length > 0 && apiCards.length===cardId) {
+        if (window.confirm("Restart cards? Click 'cancel' to return to the Home page.")) {
+            setCardId(0);
+            history.go(0)
+        } else {
+            history.push("/");
+            history.go(0);
+        };
+    };
+    return null;   
+}
+
+export default RestartPrompt;

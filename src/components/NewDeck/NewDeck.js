@@ -9,4 +9,19 @@ The description field is a <textarea> field that can be multiple lines of text.
 If the user clicks Submit, the user is taken to the Deck screen.
 If the user clicks Cancel, the user is taken to the Home screen. */
 
+import React from "react";
 import { createDeck } from "../../utils/api";
+import NewDeckBreadcrumb from "./NewDeckBreadcrumb";
+import DeckForm from "./DeckForm";
+
+function NewDeck() {
+    return (
+        <div>
+            <NewDeckBreadcrumb />
+            <h2>Create Deck</h2>
+            <DeckForm />
+        </div>
+    );
+}
+
+export default NewDeck;

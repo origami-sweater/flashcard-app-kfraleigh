@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function FormatCard({ id, front, back, deckId }) {
+function FormatViewCard({ id, front, back, deckId }) {
     if (deckId) {
         return (
             <div key={id} class="card">
@@ -13,9 +13,11 @@ function FormatCard({ id, front, back, deckId }) {
                         <p>{back}</p>
                     </div>
                 </div>
-                <Link to={`/decks/${id}`} class="btn btn-secondary">View</Link>
-                <Link to={`/decks/${id}/study`} class="btn btn-primary">Study</Link>
-                <button class="btn btn-danger">Trashbin</button>
+                <div>
+                    <Link to={`/decks/${id}`} class="btn btn-secondary ml-3 mb-3">View</Link>
+                    <Link to={`/decks/${id}/study`} class="btn btn-primary ml-2 mb-3">Study</Link>
+                    <button class="btn btn-danger ml-2 mb-3">Delete</button>
+                </div>
             </div>
         );
     } else {
@@ -23,4 +25,4 @@ function FormatCard({ id, front, back, deckId }) {
     };
 }
 
-export default FormatCard;
+export default FormatViewCard;

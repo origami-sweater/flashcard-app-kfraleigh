@@ -25,7 +25,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import FormatDeck from "../../HomePage/FormatDeck";
 import { readDeck } from "../../utils/api";
-import FormatCard from "./FormatCard";
+import FormatViewCard from "./FormatViewCard";
 
 function Deck({ apiDeck, setApiDeck, apiCards, setApiCards }) {
     const { deckId } = useParams();
@@ -46,7 +46,7 @@ function Deck({ apiDeck, setApiDeck, apiCards, setApiCards }) {
 
     const list = apiCards.map((card) => {
         const { id, front, back, deckId } = card;
-        return FormatCard({ id, front, back, deckId });
+        return FormatViewCard({ id, front, back, deckId });
     });
 
     return (

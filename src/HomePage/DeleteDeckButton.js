@@ -21,9 +21,9 @@ function DeleteDeckButton({ deckId }) {
     };
        
     return(
-        <div>
-            <button class="btn btn-danger" onClick={() => removeDeck()}>Trashbin</button>
-        </div>
+        <>
+            <button class="btn btn-danger" onClick={() => removeDeck()}>Delete</button>
+        </>
     )
 }
 
