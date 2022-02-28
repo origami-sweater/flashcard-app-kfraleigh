@@ -1,10 +1,10 @@
 import React from "react";
 import { createDeck, updateDeck } from "../../utils/api";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
 
-function SubmitDeckButton({ formName, setFormName, formDescription, setFormDescription, existingDeck }) {
+function SubmitDeckButton({ formName, setFormName, formDescription, setFormDescription, apiDeck }) {
     const history = useHistory();
-    const deckId = existingDeck.id;
+    const { deckId }= useParams();
 
     //New Deck - handles push to server & validates form fields 
     async function uploadDeck(deck) {
@@ -29,13 +29,13 @@ function SubmitDeckButton({ formName, setFormName, formDescription, setFormDescr
     //Existing Deck - handles read and push to server & validates form fields 
     async function changeDeck(deck) {
         try {
-            if (deck.name !== existingDeck.name || deck.description !== existingDeck.description) {
+            if (deck.name !== apiDeck.name || deck.description !== apiDeck.description) {
                 const uploaded = await updateDeck(deck);
                 //sends us to new deck's page
                 history.push(`/decks/${uploaded.id}`)
                 history.go(0);
             } else {
-                //sends alert if form fields are empty
+                //sends alert if form fields are the same as the original
                 window.alert("Please make changes.");
             };
         } catch(err) {
@@ -43,7 +43,7 @@ function SubmitDeckButton({ formName, setFormName, formDescription, setFormDescr
         };
     };
 
-    //on click function
+    //submit function
     const handleSubmit = (event) => {
         event.preventDefault();
         if (deckId) {
@@ -63,7 +63,7 @@ function SubmitDeckButton({ formName, setFormName, formDescription, setFormDescr
     };
 
     return (
-        <button type="submit" class="btn btn-primary" onClick={handleSubmit}>Submit</button>
+        <button type="submit" class="btn btn-primary ml-2" onClick={handleSubmit}>Submit</button>
     );
 }
 

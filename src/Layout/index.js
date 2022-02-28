@@ -12,6 +12,8 @@ function Layout() {
   const [apiDeck, setApiDeck] = useState({});
   const [apiCards, setApiCards] = useState([]);
   const [flipped, setFlipped] = useState(false);
+  const [formName, setFormName] = useState("");
+  const [formDescription, setFormDescription] = useState("");
 
   return (
     <>
@@ -22,7 +24,12 @@ function Layout() {
             <Home />
           </Route>
           <Route exact path="/decks/new">
-              <NewDeck />
+              <NewDeck 
+                formDescription={formDescription}
+                setFormDescription={setFormDescription}
+                formName={formName}
+                setFormName={setFormName}
+              />
           </Route>
           <Route exact path="/decks/:deckId">
               <ViewDeck apiDeck={apiDeck} setApiDeck={setApiDeck} apiCards={apiCards} setApiCards={setApiCards} />
@@ -38,7 +45,14 @@ function Layout() {
                 />
           </Route>
           <Route path="/decks/:deckId/edit">
-              <EditDeck apiDeck={apiDeck} setApiDeck={setApiDeck}/>
+              <EditDeck 
+                apiDeck={apiDeck} 
+                setApiDeck={setApiDeck}
+                formDescription={formDescription}
+                setFormDescription={setFormDescription}
+                formName={formName}
+                setFormName={setFormName}
+              />
           </Route>
           <Route path="/decks/:deckId/cards/new">
               {/*AddCard*/}

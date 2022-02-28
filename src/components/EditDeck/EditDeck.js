@@ -5,7 +5,7 @@ import EditDeckBreadcrumb from "./EditDeckBreadcrumb";
 import { readDeck } from "../../utils/api";
 
 
-function EditDeck({ apiDeck, setApiDeck }) {
+function EditDeck({ apiDeck, setApiDeck, formName, formDescription, setFormName, setFormDescription }) {
     const {deckId} = useParams();
 
     useEffect (() => {
@@ -13,6 +13,8 @@ function EditDeck({ apiDeck, setApiDeck }) {
             try {
                 const response = await readDeck(deckId);
                 setApiDeck(response);
+                setFormDescription(response.description);
+                setFormName(response.name);
             } catch(err) {
                 console.log(err.name);
             };
@@ -24,7 +26,13 @@ function EditDeck({ apiDeck, setApiDeck }) {
         <div>
             <EditDeckBreadcrumb apiDeck={apiDeck} />
             <h2>Create Deck</h2>
-            <DeckForm apiDeck={apiDeck} />
+            <DeckForm 
+                apiDeck={apiDeck}
+                formDescription={formDescription}
+                setFormDescription={setFormDescription}
+                formName={formName}
+                setFormName={setFormName} 
+            />
         </div>
     );
 }

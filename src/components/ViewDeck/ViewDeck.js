@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { readDeck } from "../../utils/api";
-import FormatViewCard from "./FormatViewCard";
 import ViewDeckBreadcrumb from "./ViewDeckBreadcrumb";
 import FormatDeckHeader from "./FormatDeckHeader";
+import CardList from "./CardList";
 
 function ViewDeck({ apiDeck, setApiDeck, apiCards, setApiCards }) {
     const { deckId } = useParams();
@@ -22,18 +22,11 @@ function ViewDeck({ apiDeck, setApiDeck, apiCards, setApiCards }) {
         loadDeck();
     }, [deckId]);          
 
-    const list = apiCards.map((card) => {
-        const { id, front, back, deckId } = card;
-        return FormatViewCard({ id, front, back, deckId });
-    });
-
     return (
-        
         <div className="app-routes">
             <ViewDeckBreadcrumb apiDeck={apiDeck} />
             <FormatDeckHeader id={id} name={name} description={description} />
-            <h5>Cards</h5>
-            {list}
+            <CardList apiCards={apiCards} />
         </div>
       );
 }
