@@ -19,7 +19,7 @@ function CardForm({ apiDeck, apiCard, formFront, formBack, setFormFront, setForm
         <form onSubmit={handleSubmit}>
             <FrontField formFront={formFront} setFormFront={setFormFront} />
             <BackField formBack={formBack} setFormBack={setFormBack} />
-            <Link to={`/decks/${deckId}`} class="btn btn-secondary">{cardId ? "Cancel" : "Done"}</Link>
+            <Link to={`/decks/${deckId}`} className="btn btn-secondary">{cardId ? "Cancel" : "Done"}</Link>
             <SaveCardButton 
                 formFront={formFront} 
                 setFormFront={setFormFront} 

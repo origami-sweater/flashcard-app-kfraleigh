@@ -18,7 +18,7 @@ function DeleteCardButton({ id }) {
        
     return(
         <span>
-            <button class="btn btn-danger mb-3 ml-2" onClick={() => removeCard()}>Delete</button>
+            <button className="btn btn-danger mb-3 ml-2" onClick={() => removeCard()}>Delete</button>
         </span>
     )
 }
