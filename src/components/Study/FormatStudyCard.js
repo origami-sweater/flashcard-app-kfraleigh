@@ -4,9 +4,11 @@ import FlipButton from "./FlipButton";
 import NextButton from "./NextButton";
 
 function FormatStudyCard({ apiCards, flipped, setFlipped, cardId, setCardId }) {
+    //checks to see if enough cards
     if (apiCards.length > 2) {
         const formattedCard = apiCards.map((card) => {
             const { id, front, back, deckId } = card;
+            //checks to see if front or back should be displayed
             if (flipped===false) {
                 return (
                     <div key={id} class="card">

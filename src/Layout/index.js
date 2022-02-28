@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import Header from "./Header";
 import NotFound from "./NotFound";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
-import Deck from "../components/Deck/Deck";
-import Home from "../HomePage/Home";
+import ViewDeck from "../components/ViewDeck/ViewDeck";
+import Home from "../components/HomePage/Home";
 import Study from "../components/Study/Study";
 import NewDeck from "../components/NewDeck/NewDeck";
+import EditDeck from "../components/EditDeck/EditDeck";
 
 function Layout() {
-  const [apiDeck, setApiDeck] = useState([]);
+  const [apiDeck, setApiDeck] = useState({});
   const [apiCards, setApiCards] = useState([]);
   const [flipped, setFlipped] = useState(false);
 
@@ -21,10 +22,10 @@ function Layout() {
             <Home />
           </Route>
           <Route exact path="/decks/new">
-              <NewDeck apiDeck={apiDeck} setApiDeck={setApiDeck} apiCards={apiCards} setApiCards={setApiCards} />
+              <NewDeck />
           </Route>
           <Route exact path="/decks/:deckId">
-              <Deck apiDeck={apiDeck} setApiDeck={setApiDeck} apiCards={apiCards} setApiCards={setApiCards} />
+              <ViewDeck apiDeck={apiDeck} setApiDeck={setApiDeck} apiCards={apiCards} setApiCards={setApiCards} />
           </Route>
           <Route path="/decks/:deckId/study">
               <Study 
@@ -37,7 +38,7 @@ function Layout() {
                 />
           </Route>
           <Route path="/decks/:deckId/edit">
-              {/*EditDeck*/}
+              <EditDeck apiDeck={apiDeck} setApiDeck={setApiDeck}/>
           </Route>
           <Route path="/decks/:deckId/cards/new">
               {/*AddCard*/}

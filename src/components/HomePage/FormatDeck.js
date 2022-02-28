@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { readDeck } from "../utils/api";
 import DeleteDeckButton from "./DeleteDeckButton";
 
 function FormatDeck({ id, name, description, cards }) {

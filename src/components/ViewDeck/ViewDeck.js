@@ -23,11 +23,12 @@ Has a Delete button that allows that card to be deleted.*/
 
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import FormatDeck from "../../HomePage/FormatDeck";
 import { readDeck } from "../../utils/api";
 import FormatViewCard from "./FormatViewCard";
+import ViewDeckBreadcrumb from "./ViewDeckBreadcrumb";
+import FormatDeckHeader from "./FormatDeckHeader";
 
-function Deck({ apiDeck, setApiDeck, apiCards, setApiCards }) {
+function ViewDeck({ apiDeck, setApiDeck, apiCards, setApiCards }) {
     const { deckId } = useParams();
     const { id, name, description, cards } = apiDeck;
 
@@ -35,8 +36,8 @@ function Deck({ apiDeck, setApiDeck, apiCards, setApiCards }) {
         async function loadDeck() {
             try {
             const response = await readDeck(deckId);
-            setApiDeck(response)
-            setApiCards(response.cards)
+            setApiDeck(response);
+            setApiCards(response.cards);
             } catch(err) {
                 console.log(err.name);
             };
@@ -50,12 +51,14 @@ function Deck({ apiDeck, setApiDeck, apiCards, setApiCards }) {
     });
 
     return (
+        
         <div className="app-routes">
-          {FormatDeck({ id, name, description, cards })}
-          <h3>Cards</h3>
-          {list}
+            <ViewDeckBreadcrumb apiDeck={apiDeck} />
+            <FormatDeckHeader id={id} name={name} description={description} />
+            <h5>Cards</h5>
+            {list}
         </div>
       );
 }
 
-export default Deck;
+export default ViewDeck;

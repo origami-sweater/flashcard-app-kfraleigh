@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { listDecks } from "../utils/api";
+import { listDecks } from "../../utils/api";
 import FormatDeck from "./FormatDeck";
 import { Link } from "react-router-dom";
 

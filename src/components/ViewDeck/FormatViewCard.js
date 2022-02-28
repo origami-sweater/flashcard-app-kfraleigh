@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import DeleteCardButton from "./DeleteCardButton";
 
 function FormatViewCard({ id, front, back, deckId }) {
     if (deckId) {
@@ -14,9 +15,8 @@ function FormatViewCard({ id, front, back, deckId }) {
                     </div>
                 </div>
                 <div>
-                    <Link to={`/decks/${id}`} class="btn btn-secondary ml-3 mb-3">View</Link>
-                    <Link to={`/decks/${id}/study`} class="btn btn-primary ml-2 mb-3">Study</Link>
-                    <button class="btn btn-danger ml-2 mb-3">Delete</button>
+                    <Link to={`/decks/${deckId}/cards/${id}/edit`} class="btn btn-secondary ml-3 mb-3 mr-2">Edit</Link>
+                    <DeleteCardButton id={id} />
                 </div>
             </div>
         );
