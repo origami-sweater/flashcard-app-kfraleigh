@@ -63,7 +63,7 @@ function SubmitDeckButton({ formName, setFormName, formDescription, setFormDescr
     };
 
     return (
-        <button type="submit" class="btn btn-primary ml-2" onClick={handleSubmit}>Submit</button>
+        <button type="submit" className="btn btn-primary ml-2" onClick={handleSubmit}>Submit</button>
     );
 }
 

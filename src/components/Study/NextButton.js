@@ -9,7 +9,7 @@ function NextButton({ cardId, setCardId, setFlipped }) {
 
     return (
         <div>
-            <button type="button" class="btn btn-primary ml-3 mb-3" onClick={handleClick}>Next</button>
+            <button type="button" className="btn btn-primary ml-3 mb-3" onClick={handleClick}>Next</button>
         </div>
     );
 }

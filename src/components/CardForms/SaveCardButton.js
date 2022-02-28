@@ -71,7 +71,7 @@ function SaveCardButton({ formFront, setFormFront, formBack, setFormBack, apiCar
     };
 
     return (
-        <button type="submit" class="btn btn-primary ml-2" onClick={handleSubmit}>Submit</button>
+        <button type="submit" className="btn btn-primary ml-2" onClick={handleSubmit}>Submit</button>
     );
 }
 

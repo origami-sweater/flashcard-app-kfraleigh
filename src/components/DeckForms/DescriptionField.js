@@ -10,7 +10,7 @@ function DescriptionField({ formDescription, setFormDescription }) {
                 <textarea 
                     id="formDescription" 
                     type="formDescription" 
-                    formName="formDescription"
+                    name="formDescription"
                     rows="5"
                     cols="50"
                     onChange={handleDescriptionChange} 

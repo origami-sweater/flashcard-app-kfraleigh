@@ -10,7 +10,7 @@ function BackField({ formBack, setFormBack }) {
                 <textarea 
                     id="formBack" 
                     type="formBack" 
-                    formName="formBack"
+                    name="formBack"
                     rows="5"
                     cols="50"
                     onChange={handleBackChange} 

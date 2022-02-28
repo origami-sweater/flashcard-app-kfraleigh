@@ -9,17 +9,17 @@ function CardList({ apiCards }) {
             const { id, front, back, deckId } = card;
             if (deckId) {
                 return (
-                    <div key={id} class="card">
-                        <div class="row">
-                            <div class="card-body col-md-6 text-secondary">
+                    <div key={id} className="card">
+                        <div className="row">
+                            <div className="card-body col-md-6 text-secondary">
                                 <p>{front}</p>
                             </div>
-                            <div class="card-body col-md-6 text-secondary">
+                            <div className="card-body col-md-6 text-secondary">
                                 <p>{back}</p>
                             </div>
                         </div>
                         <div>
-                            <Link to={`/decks/${deckId}/cards/${id}/edit`} class="btn btn-secondary ml-3 mb-3 mr-2">Edit</Link>
+                            <Link to={`/decks/${deckId}/cards/${id}/edit`} className="btn btn-secondary ml-3 mb-3 mr-2">Edit</Link>
                             <DeleteCardButton id={id} />
                         </div>
                     </div>

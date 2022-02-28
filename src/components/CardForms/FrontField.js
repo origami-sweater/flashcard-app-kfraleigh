@@ -10,7 +10,7 @@ function FrontField({ formFront, setFormFront }) {
                 <textarea 
                     id="formFront" 
                     type="formFront" 
-                    formName="formFront"
+                    name="formFront"
                     rows="5"
                     cols="50"
                     onChange={handleFrontChange} 

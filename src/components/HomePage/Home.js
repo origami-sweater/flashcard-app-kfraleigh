@@ -25,7 +25,7 @@ function Home() {
 
     return (
         <div>
-            <Link to="/decks/new" class="btn btn-secondary mb-3">
+            <Link to="/decks/new" className="btn btn-secondary mb-3">
                 + Create Deck
             </Link>
             {list}

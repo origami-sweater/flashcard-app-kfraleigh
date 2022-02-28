@@ -10,7 +10,7 @@ function NameField({ formName, setFormName }) {
                 <input
                     id="formName"
                     type="text"
-                    formName="formName"
+                    name="formName"
                     onChange={handleNameChange}
                     value={formName}
                 />

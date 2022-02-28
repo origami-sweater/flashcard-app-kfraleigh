@@ -10,9 +10,9 @@ function FormatStudyCard({ apiCards, flipped, setFlipped, cardId, setCardId }) {
             //checks to see if front or back should be displayed
             if (flipped===false) {
                 return (
-                    <div key={id} class="card">
-                        <div class="card-body text-secondary">
-                            <h3>{`${cardId + 1} of ${apiCards.length}`}</h3>
+                    <div key={id} className="card">
+                        <div className="card-body text-secondary">
+                            <h3>{`Card ${cardId + 1} of ${apiCards.length}`}</h3>
                             <p>{front}</p>
                         </div>
                         <FlipButton flipped={flipped} setFlipped={setFlipped}/>
@@ -20,15 +20,14 @@ function FormatStudyCard({ apiCards, flipped, setFlipped, cardId, setCardId }) {
                 );
             } else if (flipped) {
                 return (
-                    <div key={id} class="card">
-                        <div class="card-body text-secondary">
+                    <div key={id} className="card">
+                        <div className="card-body text-secondary">
                             <h3>{`${cardId + 1} of ${apiCards.length}`}</h3>
                             <p>{back}</p>
                         </div>
                         <NextButton cardId={cardId} setCardId={setCardId} setFlipped={setFlipped}/>
                     </div>
                 );
-                //JUST ADDED
             } else {
                 return null;
             };

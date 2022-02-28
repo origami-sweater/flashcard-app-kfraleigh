@@ -7,11 +7,11 @@ function CancelButton() {
 
     if (deckId) {
         return (
-            <Link to={`/decks/${deckId}`} class="btn btn-secondary">Cancel</Link>
+            <Link to={`/decks/${deckId}`} className="btn btn-secondary">Cancel</Link>
         )
     } else {
         return (
-            <Link to="/" class="btn btn-secondary">Cancel</Link>
+            <Link to="/" className="btn btn-secondary">Cancel</Link>
         )
     };
 }

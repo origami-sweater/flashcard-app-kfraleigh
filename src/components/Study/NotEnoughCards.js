@@ -9,7 +9,7 @@ function NotEnoughCards({ apiCards, apiDeck }) {
             <div>
                 <h4>Not Enough Cards:</h4>
                 <p>{`You need at least 3 cards to study. There are ${apiCards.length} in this deck.`}</p>
-                <Link to={`/decks/${apiDeck.id}/cards/new`} class="btn btn-primary">+Add Cards</Link>
+                <Link to={`/decks/${apiDeck.id}/cards/new`} className="btn btn-primary">+Add Cards</Link>
             </div>
         );
     } else {
