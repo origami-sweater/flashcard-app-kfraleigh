@@ -22,10 +22,10 @@ import NotEnoughCards from "./NotEnoughCards";
 function Study({ apiDeck, setApiDeck, apiCards, setApiCards, flipped, setFlipped }) {
     const [cardId, setCardId] = useState(0);
     const { deckId } = useParams();
-    const { id, name, description, cards } = apiDeck;
+    const { name } = apiDeck;
 
     useEffect (() => {
-        async function loadDeck() {
+        async function loadDeck(deckId) {
             try {
             const response = await readDeck(deckId);
             setApiDeck(response)

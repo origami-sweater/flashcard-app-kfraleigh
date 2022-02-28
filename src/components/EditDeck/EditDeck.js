@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import DeckForm from "../DeckForms/DeckForm";
 import EditDeckBreadcrumb from "./EditDeckBreadcrumb";
@@ -11,15 +11,13 @@ function EditDeck({ apiDeck, setApiDeck }) {
     useEffect (() => {
         async function loadDeck() {
             try {
-                if (deckId) {
-                    const response = await readDeck(deckId);
-                    setApiDeck(response);
-                };
+                const response = await readDeck(deckId);
+                setApiDeck(response);
             } catch(err) {
                 console.log(err.name);
             };
         };
-        loadDeck();
+        loadDeck(deckId);
     }, [deckId]);  
     
     return (
