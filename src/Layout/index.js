@@ -7,6 +7,8 @@ import Home from "../components/HomePage/Home";
 import Study from "../components/Study/Study";
 import NewDeck from "../components/NewDeck/NewDeck";
 import EditDeck from "../components/EditDeck/EditDeck";
+import NewCard from "../components/NewCard/NewCard";
+import EditCard from "../components/EditCard/EditCard";
 
 function Layout() {
   const [apiDeck, setApiDeck] = useState({});
@@ -14,6 +16,8 @@ function Layout() {
   const [flipped, setFlipped] = useState(false);
   const [formName, setFormName] = useState("");
   const [formDescription, setFormDescription] = useState("");
+  const [formFront, setFormFront] = useState("");
+  const [formBack, setFormBack] = useState("");
 
   return (
     <>
@@ -55,10 +59,26 @@ function Layout() {
               />
           </Route>
           <Route path="/decks/:deckId/cards/new">
-              {/*AddCard*/}
+              <NewCard 
+                formFront={formFront} 
+                setFormFront={setFormFront}
+                formBack={formBack}
+                setFormBack={setFormBack}
+                apiDeck={apiDeck} 
+                setApiDeck={setApiDeck}
+                apiCards={apiCards}
+                setApiCards={setApiCards}
+              />
           </Route>
           <Route path="/decks/:deckId/cards/:cardId/edit">
-              {/*EditCard*/}
+              <EditCard 
+                apiDeck={apiDeck} 
+                setApiDeck={setApiDeck}
+                formFront={formFront} 
+                setFormFront={setFormFront}
+                formBack={formBack}
+                setFormBack={setFormBack} 
+              />
           </Route>
           <Route>
             <NotFound/>

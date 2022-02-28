@@ -25,7 +25,7 @@ function Study({ apiDeck, setApiDeck, apiCards, setApiCards, flipped, setFlipped
     const { name } = apiDeck;
 
     useEffect (() => {
-        async function loadDeck(deckId) {
+        async function loadDeck() {
             try {
             const response = await readDeck(deckId);
             setApiDeck(response)

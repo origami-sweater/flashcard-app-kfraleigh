@@ -8,9 +8,9 @@ function DescriptionField({ formDescription, setFormDescription }) {
             <label htmlFor="decsription">
                 <p>Description</p>
                 <textarea 
-                    id="formD" 
-                    type="formD" 
-                    formName="formD"
+                    id="formDescription" 
+                    type="formDescription" 
+                    formName="formDescription"
                     rows="5"
                     cols="50"
                     onChange={handleDescriptionChange} 
