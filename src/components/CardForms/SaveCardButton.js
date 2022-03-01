@@ -12,7 +12,7 @@ function SaveCardButton({ formFront, setFormFront, formBack, setFormBack, apiCar
         try {
             if (formFront && formBack && deckId) {
                 const signal = abortController.signal;
-                const uploaded = await createCard(deckId, card, signal);
+                await createCard(deckId, card, signal);
                 //resets form states
                 setFormFront("");
                 setFormBack(""); 

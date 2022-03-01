@@ -66,8 +66,6 @@ function Layout() {
                 setFormBack={setFormBack}
                 apiDeck={apiDeck} 
                 setApiDeck={setApiDeck}
-                apiCards={apiCards}
-                setApiCards={setApiCards}
               />
           </Route>
           <Route path="/decks/:deckId/cards/:cardId/edit">

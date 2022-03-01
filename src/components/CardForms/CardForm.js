@@ -1,6 +1,6 @@
 //requirement:The Edit Card and Create Card screens share the same form component.
 
-import React, { useState } from "react";
+import React from "react";
 import FrontField from "./FrontField";
 import BackField from "./BackField";
 import SaveCardButton from "./SaveCardButton";

@@ -22,7 +22,7 @@ function FormatStudyCard({ apiCards, flipped, setFlipped, cardId, setCardId }) {
                 return (
                     <div key={id} className="card">
                         <div className="card-body text-secondary">
-                            <h3>{`${cardId + 1} of ${apiCards.length}`}</h3>
+                            <h3>{`Card ${cardId + 1} of ${apiCards.length}`}</h3>
                             <p>{back}</p>
                         </div>
                         <NextButton cardId={cardId} setCardId={setCardId} setFlipped={setFlipped}/>

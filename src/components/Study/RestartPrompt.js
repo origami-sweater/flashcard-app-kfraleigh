@@ -4,7 +4,7 @@ function RestartPrompt({ apiCards, cardId, setCardId }) {
     const history = useHistory();
     
     if (apiCards.length > 0 && apiCards.length===cardId) {
-        if (window.confirm("Restart cards? Click 'cancel' to return to the Home page.")) {
+        if (window.confirm("Restart cards?\nClick 'cancel' to return to the Home page.")) {
             setCardId(0);
             history.go(0)
         } else {

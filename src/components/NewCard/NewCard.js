@@ -12,18 +12,16 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import NewCardBreadcrumb from "./NewCardBreadcrumb";
 import { readDeck } from "../../utils/api";
-import FrontField from "../CardForms/FrontField";
 import CardForm from "../CardForms/CardForm";
 
-function NewCard({ formFront, formBack, setFormFront, setFormBack, apiDeck, setApiDeck, apiCards, setApiCards }) {
-    const {deckId} = useParams();
+function NewCard({ formFront, formBack, setFormFront, setFormBack, apiDeck, setApiDeck }) {
+    const { deckId } = useParams();
 
     useEffect (() => {
         async function loadDeck() {
             try {
                 const response = await readDeck(deckId);
                 setApiDeck(response);
-                setApiCards(response.cards);
             } catch(err) {
                 console.log(err.name);
             };
